@@ -37,9 +37,10 @@ parseExpression input = case parse expression "<interactive>" input of
                       mapM_ showStep steps
                       outputStrLn . show $ result
 
+parseString :: String -> (Value, [Step])
 parseString input = case parse expression "<interactive>" input of
                       Left err -> error . unwords . map messageString . errorMessages $ err
                       Right exp -> runEval exp
 
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = interactive 
