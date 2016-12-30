@@ -23,8 +23,8 @@ langDef = Token.LanguageDef
   , Token.opStart         = Token.opLetter langDef
   , Token.opLetter        = oneOf ":!#$%&*+/<=>?@\\^|-~"
   , Token.caseSensitive   = True
-  , Token.reservedOpNames = ["λ", "."]
-  , Token.reservedNames   = ["lambda"]
+  , Token.reservedOpNames = ["\\", "."]
+  , Token.reservedNames   = ["lambda", "\955", "λ"]
 }
 
 -- Using defaults from Text.Parsec.Token

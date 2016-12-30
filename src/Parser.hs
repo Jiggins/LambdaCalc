@@ -31,7 +31,8 @@ variable = Variable <$> identifier
 -- * Util
 
 lambdaChar :: Parsec String u ()
-lambdaChar = reservedOp "\\" <|> reservedOp "λ" <|> reserved "lambda"
+lambdaChar = reservedOp "\\" <|> reservedOp "\955" {- λ -} <|> reserved "lambda"
+          <?> "lambda"
 
 character :: Parsec String u Char
 character = between (symbol "'") (symbol "'") anyChar
